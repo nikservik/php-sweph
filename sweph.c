@@ -989,8 +989,8 @@ PHP_FUNCTION(swe_houses_ex)
 	for(i = 0; i < 10; i++)
 		add_index_double(&ascmc_arr, i, ascmc[i]);
 		
-	add_assoc_zval(return_value, "cusps", &cusps_arr);
-	add_assoc_zval(return_value, "ascmc", &ascmc_arr);
+	add_assoc_zval(return_value, "cusps", cusps_arr);
+	add_assoc_zval(return_value, "ascmc", ascmc_arr);
 	add_assoc_long(return_value, "rc", rc);
 }
 
