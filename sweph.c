@@ -959,7 +959,7 @@ PHP_FUNCTION(swe_houses_ex)
 	double cusps[37], ascmc[10]; 
 	int i, houses;
 	long iflag;
-	zval cusps_arr, ascmc_arr;
+	zval *cusps_arr, *ascmc_arr;
 	
 	if(ZEND_NUM_ARGS() != 5) WRONG_PARAM_COUNT;
 
@@ -975,7 +975,8 @@ PHP_FUNCTION(swe_houses_ex)
 	/* create 2 index array, and 1 assoc array */
 	array_init(return_value);
 	
-	array_init(&cusps_arr);
+	ZVAL_NEW_ARR(cusps_arr);
+	array_init(cusps_arr);
 	
 	if (hsys[0] == 'G')
 		houses = 37;
@@ -983,11 +984,12 @@ PHP_FUNCTION(swe_houses_ex)
 		houses = 13;
 		
 	for(i = 0; i < houses; i++)
-		add_index_double(&cusps_arr, i, cusps[i]);
+		add_index_double(cusps_arr, i, cusps[i]);
 
-	array_init(&ascmc_arr);
+	ZVAL_NEW_ARR(ascmc_arr);
+	array_init(ascmc_arr);
 	for(i = 0; i < 10; i++)
-		add_index_double(&ascmc_arr, i, ascmc[i]);
+		add_index_double(ascmc_arr, i, ascmc[i]);
 		
 	add_assoc_zval(return_value, "cusps", cusps_arr);
 	add_assoc_zval(return_value, "ascmc", ascmc_arr);
