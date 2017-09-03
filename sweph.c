@@ -1234,7 +1234,7 @@ PHP_FUNCTION(swe_sol_eclipse_how)
 		for(i = 0; i < 20; i++)
 			add_index_double(&attr_arr, i, attr[i]);
 		
-		add_assoc_zval(return_value, "attr", attr_arr);
+		add_assoc_zval(return_value, "attr", &attr_arr);
 	}
 }
 
