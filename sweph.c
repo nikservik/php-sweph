@@ -939,11 +939,11 @@ PHP_FUNCTION(swe_houses)
 		houses = 13;
 		
 	for(i = 0; i < houses; i++)
-		add_index_double(cusps_arr, i, cusps[i]);
+		add_index_double(&cusps_arr, i, cusps[i]);
 
 	array_init(&ascmc_arr);
 	for(i = 0; i < 10; i++)
-		add_index_double(ascmc_arr, i, ascmc[i]);
+		add_index_double(&ascmc_arr, i, ascmc[i]);
 		
 	add_assoc_zval(return_value, "cusps", &cusps_arr);
 	add_assoc_zval(return_value, "ascmc", &ascmc_arr);
@@ -983,11 +983,11 @@ PHP_FUNCTION(swe_houses_ex)
 		houses = 13;
 		
 	for(i = 0; i < houses; i++)
-		add_index_double(cusps_arr, i, cusps[i]);
+		add_index_double(&cusps_arr, i, cusps[i]);
 
 	array_init(&ascmc_arr);
 	for(i = 0; i < 10; i++)
-		add_index_double(ascmc_arr, i, ascmc[i]);
+		add_index_double(&ascmc_arr, i, ascmc[i]);
 		
 	add_assoc_zval(return_value, "cusps", &cusps_arr);
 	add_assoc_zval(return_value, "ascmc", &ascmc_arr);
@@ -1026,11 +1026,11 @@ PHP_FUNCTION(swe_houses_armc)
 		houses = 13;
 		
 	for(i = 0; i < houses; i++)
-		add_index_double(cusps_arr, i, cusps[i]);
+		add_index_double(&cusps_arr, i, cusps[i]);
 
 	array_init(&ascmc_arr);
 	for(i = 0; i < 10; i++)
-		add_index_double(ascmc_arr, i, ascmc[i]);
+		add_index_double(&ascmc_arr, i, ascmc[i]);
 		
 	add_assoc_zval(return_value, "cusps", &cusps_arr);
 	add_assoc_zval(return_value, "ascmc", &ascmc_arr);
