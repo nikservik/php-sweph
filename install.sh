@@ -14,3 +14,5 @@ extension=sweph.so
 EOF
 ln -s $PHPDIR/mods-available/sweph.ini $PHPDIR/fpm/conf.d/20-sweph.ini
 ln -s $PHPDIR/mods-available/sweph.ini $PHPDIR/cli/conf.d/20-sweph.ini
+service php5.6-fpm restart
+
